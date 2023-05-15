@@ -13,7 +13,7 @@ public class CountOfPositive {
             int negative = input.nextInt();
             System.out.println(positive + negative);
 
-            System.out.println("continue");
+            System.out.println("Enter yes to continue and No to stop");
             i = input.next();
         }while (i.equals("yes"));
     }

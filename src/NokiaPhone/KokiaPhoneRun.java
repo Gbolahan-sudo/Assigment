@@ -1,3 +1,5 @@
+package NokiaPhone;
+
 import java.util.Scanner;
 
 public class KokiaPhoneRun {

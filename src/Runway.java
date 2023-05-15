@@ -13,7 +13,7 @@ public class Runway{
 
         double length = Math.sqrt(v) / (2 * a);
 
-        System.out.print("The minimum runway leangth for this airplane is " + length);
+        System.out.print("The minimum runway length for this airplane is " + length);
 
 
     }
