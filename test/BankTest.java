@@ -20,18 +20,22 @@ class BankTest {
     }
 
     @Test void toDeposit() {
-        bank.deposit("Account number", 50_000);
+        bank.deposit("8090029032", 50_000);
         assertEquals(50_000,bank.checkBalance());
     }
 
     @Test void toCheckBalance() {
-        bank.deposit("Account number", 50_000);
+        bank.deposit("8090029032", 50_000);
         assertEquals(50_000, bank.checkBalance());
     }
     @Test void toWithdraw() {
-        bank.deposit("Account number", 50_000);
-        bank.withdraw("Account number", 700, "pin");
-        double expected = 49_000;
+        bank.deposit("8090029032", 50_000);
+        bank.withdraw("8090029032", 10_000, "pin");
+        double expected = 40_000;
     assertEquals(expected, bank.checkBalance());
+    }
+    @Test void toTransfer(){
+        bank.deposit("8090029032",10_000);
+        bank.transfer("8090029032","8090038032",5_000,"1212");
     }
 }
