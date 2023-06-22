@@ -15,7 +15,14 @@ class DiaryTest {
     @BeforeEach void setUp() {
         diary= new Diary("username", "password");
     }
-
+    @Test void createDiary(){
+        diary.createDiary("uche");
+        assertTrue(diary.createEntry());
+    }
+    @Test void checkIfDiaryExisting(){
+        diary.diaryExisting("1111");
+        assertTrue(diary.createEntry());
+    }
     @Test void diaryIsNotNull() {
         assertNotNull(diary);
     }
@@ -55,10 +62,14 @@ class DiaryTest {
         diary.setPassword("password");
         assertNotNull(diary.getIsLocked());
     }
-//    @Test void toSetEntries(List<Entry> entries){
-//        diary.setEntries(entries);
-//        assertTrue(diary.p());
-//    }
+    @Test void toSetEntries(){
+        LocalDateTime dateTime = LocalDateTime.of(2023, 6, 21, 9, 30);
+        Entry entries = new Entry(1, "Java",
+                "Hey", dateTime);
+        ;
+        diary.setEntries(entries);
+        assertNull(diary.getEntries());
+    }
 
 }
 
