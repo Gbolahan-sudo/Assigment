@@ -1,21 +1,37 @@
 package diaryAPP;
 
-import java.util.List;
-
 public class Diary {
+    private Entry entries;
     private boolean isLocked;
     private String username;
     private String password;
     private int deleteEntry;
-    private void createEntry() {
-    }
-    private List<Entry> entries;
+    private String userName;
+//    private List<Entry> entries;
+
+   public boolean createEntry() {
+       return true;
+   }
 
 
 
     public Diary(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+    public void createDiary(String userName) {
+           if (this.username == "userName") {
+               System.out.println("User Name");
+           } else if (this.username != username) {
+               System.out.println("User Name does not exist");
+           }
+    }
+    public void diaryExisting(String password){
+        if (this.password == "password") {
+            System.out.println("Page");
+        } else if (this.password != password) {
+            System.out.println("wrong input");
+        }
     }
 
     public void unlockDiary(String password) {
@@ -58,8 +74,8 @@ public class Diary {
 
     }
 
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
+    public void setEntries(Entry entries) {
+//        this.entries = entries;
     }
 
     public String getUsername() {
@@ -70,12 +86,13 @@ public class Diary {
         return password;
     }
 
-    public List<Entry> getEntries() {
+    public Entry getEntries() {
         return entries;
     }
 
     public void updateEntry() {
     }
+
 
 
     //    public void username(String username,String password) {
