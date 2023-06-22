@@ -4,40 +4,41 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LGAccountTest {
-    LGAccount Account;
+    LGAccount account;
+
 
     @BeforeEach void startWith() {
-        Account = new LGAccount();
+        account = new LGAccount("Lord","Gboli","8090029032","1212","5230317380HL3ZJ");;
     }
-    @Test void firstName(){
-        Account.firstName("");
-        assertEquals("");
+        @Test void testIfAccountIsExisting(){
+        assertNotNull(account);
     }
     @Test void confirmFirstName(){
-        Account.confirmFirstName();
+        account.confirmFirstName("Lord");
+    }
+    @Test void confirmLastname(){
+        account.confirmLastname("Gboli");
     }
     @Test void setPin(){
-        Account.setPin("wale");
-        double expected = Account.deposit(5000);
-        assertEquals(expected,5000);
+        account.setPin("1212");
     }
     @Test void toDeposit(){
-        double expected = Account.deposit(5000);
+        double expected = account.deposit("8090029032", "Lord_Gboli", 5000);
         assertEquals(expected, 5000);
     }
     @Test void balance(){
-        Account.deposit(5000);
+        account.deposit("8090029032", "Lord_Gboli",5000);
        double expected= 5000;
-        assertEquals(expected, Account.balance());
+        assertEquals(expected, account.balance());
     }
     @Test void toWithdraw(){
-        Account.deposit(5000);
-        Account.withdraw("wale", 2000);
+        account.deposit("8090029032", "Lord_Gboli",5000);
+        account.withdraw("1212", 2000);
        double expected = 3000;
-        assertEquals(expected, Account.balance());
+        assertEquals(expected, account.balance());
     }
     @Test void checkBalance(){
-        Account.checkBalance("pin");
+        account.checkBalance("1212");
         double expected = 3000;
         assertEquals(expected, 3000);
     }
